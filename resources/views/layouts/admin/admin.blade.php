@@ -1,24 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Label - Premium Responsive Bootstrap 4 Admin & Dashboard Template</title>
-    <!-- plugins:css -->
+    <title>Dashboard</title>
     <link rel="stylesheet" href="{{asset('contents')}}/vendors/iconfonts/mdi/css/materialdesignicons.css">
-    <!-- endinject -->
-    <!-- vendor css for this page -->
-    <!-- End vendor css for this page -->
-    <!-- inject:css -->
     <link rel="stylesheet" href="{{asset('contents')}}/css/shared/style.css">
-    <!-- endinject -->
-    <!-- Layout style -->
     <link rel="stylesheet" href="{{asset('contents')}}/css/demo_1/style.css">
-    <!-- Layout style -->
     <link rel="shortcut icon" href="{{asset('contents')}}/images/favicon.ico" />
   </head>
   <body class="header-fixed">
-    <!-- partial:partials/_header.html -->
     <nav class="t-header">
       <div class="t-header-brand-wrapper">
         <a href="index.html">
@@ -164,9 +158,7 @@
         </div>
       </div>
     </nav>
-    <!-- partial -->
     <div class="page-body">
-      <!-- partial:partials/_sidebar.html -->
       <div class="sidebar">
         <div class="user-profile">
           <div class="display-avatar animated-avatar">
@@ -234,31 +226,31 @@
               <i class="mdi mdi-flower-tulip-outline link-icon"></i>
             </a>
           </li>
-          <li class="nav-category-divider">DOCS</li>
-          <li>
-            <a href="../docs/docs.html">
-              <span class="link-title">Documentation</span>
-              <i class="mdi mdi-asterisk link-icon"></i>
-            </a>
-          </li>
+
         </ul>
       </div>
-      <!-- partial -->
       @yield('content')
-      <!-- page content ends -->
+      <footer class="footer">
+        <div class="row">
+          <div class="col-sm-6 text-center text-sm-right order-sm-1">
+            <ul class="text-gray">
+              <li><a href="#">Terms of use</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="col-sm-6 text-center text-sm-left mt-3 mt-sm-0">
+            <small class="text-muted d-block">Copyright © 2019 <a href="http://www.uxcandy.co" target="_blank">UXCANDY</a>. All rights reserved</small>
+            <small class="text-gray mt-2">Handcrafted With <i class="mdi mdi-heart text-danger"></i></small>
+          </div>
+        </div>
+      </footer>
     </div>
-    <!--page body ends -->
-    <!-- SCRIPT LOADING START FORM HERE /////////////-->
-    <!-- plugins:js -->
+    </div>
     <script src="{{asset('contents')}}/vendors/js/core.js"></script>
-    <!-- endinject -->
-    <!-- Vendor Js For This Page Ends-->
     <script src="{{asset('contents')}}/vendors/apexcharts/apexcharts.min.js"></script>
     <script src="{{asset('contents')}}/vendors/chartjs/Chart.min.js"></script>
     <script src="{{asset('contents')}}/js/charts/chartjs.addon.js"></script>
-    <!-- Vendor Js For This Page Ends-->
-    <!-- build:js -->
     <script src="{{asset('contents')}}/js/dashboard.js"></script>
-    <!-- endbuild -->
+    <script src="{{asset('contents')}}/js/template.js"></script>
   </body>
 </html>
